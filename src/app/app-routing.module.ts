@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProduitComponent } from './produit/produit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
+import { ProduitResolver } from './produit/produit.resolver';
 
 const appRoutes: Routes = [
     {
@@ -11,7 +12,8 @@ const appRoutes: Routes = [
     },
     {
         path: 'produit',
-        component: ProduitComponent
+        component: ProduitComponent,
+        resolve: { products: ProduitResolver }
     },
     {
         path: 'dashboard',
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     imports: [
         RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'})
     ],
-    exports: [ RouterModule ]
+    exports: [ RouterModule ],
+    providers: [ProduitResolver]
 })
 
 export class AppRoutingModule { }

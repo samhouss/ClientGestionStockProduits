@@ -9,10 +9,12 @@ export class ProduitMockService {
         let p1: Produit = new Produit('Livre', 50, 20);
         let p2: Produit = new Produit('Cahier', 200, 25);
         let p3: Produit = new Produit('Stylo', 500, 5);
+        let p4: Produit = new Produit('manchfa', 500, 20);
 
         this.PRODUITS.push(p1);
         this.PRODUITS.push(p2);
         this.PRODUITS.push(p3);
+        this.PRODUITS.push(p4);
     }
 
     public getProduits() {
